@@ -8,6 +8,7 @@ const Quiz = ({quizItems}) => {
   const [quizItemOptions,setQuizItemOptions] = useState(()=>quizItems[counter].options.map((option,idx)=>({id:idx+1,optionItem:option,isHighlighted:false,isCorrect:null})))
   const [hasSelected,setHasSelected] = useState(false);
   const [answered, setAnswered] = useState(false);
+  const [correct,setCorrect] = useState(0)
   console.log("Quiz",quizItemOptions)
 
 
@@ -25,6 +26,7 @@ const Quiz = ({quizItems}) => {
 
     if(answer.optionItem == quizItems[counter].answer){
       console.log("Correct!!")
+      setCorrect((correct)=>correct+1)
       setQuizItemOptions((quizItemOptions)=>quizItemOptions.map(item=>item.optionItem == answer.optionItem ? {...item,isHighlighted:false,isCorrect:true} : {...item,isHighlighted:false}))
 
     }
@@ -81,7 +83,7 @@ const Quiz = ({quizItems}) => {
         else nextQuestion()}} className={hasSelected ?  "btn primary-btn" : "btn primary-btn disabled"}>{answered ? "Next Question" : hasSelected ? "Submit Answer" : "Select Answer"}</button>
       </div>
     </div>
-  ) : <Complete correct={8}/> : "Loading..."
+  ) : <Complete correct={correct}/> : "Loading..."
   )
 }
 
