@@ -1,0 +1,120 @@
+.title-parent-row {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.title-column {
+  flex: 1;
+  /* border: 3px solid green; */
+}
+
+.title-row {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.categories {
+  /* overflow: hidden; */
+  padding: 3rem 0;
+  /* border: 3px solid red; */
+}
+
+/* .selection-btn {
+  width: 100%;
+  border: none;
+  background: transparent;
+  transition: 0.5s ease;
+  border: 3px solid green;
+}
+
+.selection-btn:hover {
+  background: red;
+} */
+
+.drop-in {
+  opacity: 0;
+  transform: translateY(-10rem);
+  animation: dropin 1s var(--delay) forwards;
+}
+
+.title-h2-one {
+  --delay: 0.5s;
+}
+
+.title-h2-two {
+  --delay: 0.75s;
+}
+.title-h2-three {
+  --delay: 1s;
+}
+
+@keyframes dropin {
+  50% {
+    opacity: 1;
+    transform: translateY(1.5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
+}
+
+.scale {
+  transform: scale(0);
+  transition: 1s ease;
+  animation: scalegrow 1s var(--delay) forwards;
+}
+
+.title-h2-four {
+  --delay: 1.2s;
+}
+.title-h2-five {
+  --delay: 1.5s;
+}
+
+@keyframes scalegrow {
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fade-in 2s 1.5s forwards;
+}
+
+@keyframes fade-in {
+  100% {
+    opacity: 1;
+  }
+}
+
+.drop-in-1 {
+  --delay: 2.75s;
+}
+
+.drop-in-2 {
+  --delay: 2s;
+}
+
+.drop-in-3 {
+  --delay: 1.5s;
+}
+
+.drop-in-4 {
+  --delay: 1s;
+}
+
+@media screen and (max-width: 950px) {
+  .title-parent-row {
+    flex-direction: column;
+  }
+  .title-column {
+    width: 100%;
+  }
+}

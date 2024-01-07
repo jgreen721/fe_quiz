@@ -1,0 +1,35 @@
+.app {
+  max-width: 144rem;
+  margin: 0 auto;
+  border: 2px solid black;
+  height: 100vh;
+  width: 100vw;
+  padding: 0rem var(--mainPaddingX);
+}
+
+.app[data-theme="light"] {
+  --primaryBg: var(--darkwhite);
+  --secondaryBg: var(--white);
+  --primaryColor: var(--mediumblue);
+  --primaryBtnColor: var(--white);
+  --primaryBtnBg: var(--violet);
+  --backgroundImage: url("./assets/pattern-background-desktop-light.svg");
+  background-image: url("./assets/pattern-background-desktop-light.svg");
+}
+
+.app[data-theme="dark"] {
+  --primaryBg: var(--darkblue);
+  --secondaryBg: var(--mediumblue);
+  --primaryColor: var(--white);
+  --primaryBtnColor: var(--white);
+  --primaryBtnBg: var(--violet);
+  --backgroundImage: url("./assets/pattern-background-desktop-dark.svg");
+}
+
+.app {
+  background: var(--primaryBg);
+  color: var(--primaryColor);
+  transition: 0.5s ease;
+  background-image: var(--backgroundImage);
+  background-size: cover;
+}

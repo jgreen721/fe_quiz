@@ -1,0 +1,39 @@
+.theme-picker-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.theme-picker-input,
+.hover {
+  position: relative;
+  width: 48px;
+  height: 28px;
+  cursor: pointer;
+}
+
+.theme-picker-input::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--primaryBtnBg);
+  border-radius: 100px;
+  /* padding: 1rem 0; */
+}
+
+.theme-picker-input::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: var(--primaryBtnColor);
+  border-radius: 100px;
+  inset: 0.45rem;
+  transition: 0.5s ease;
+  /* padding: 1rem 0; */
+}
+
+.dark-mode::after {
+  left: 2.25rem;
+}

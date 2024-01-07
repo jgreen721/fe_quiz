@@ -1,0 +1,19 @@
+.menu-row {
+  display: flex;
+  align-items: center;
+  padding: 8.4rem 0;
+}
+
+.menu-row-between {
+  justify-content: space-between;
+}
+
+.menu-row-end {
+  justify-content: flex-end;
+}
+
+.quiz-name-row {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
