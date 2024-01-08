@@ -5,7 +5,7 @@ import "./Quiz.css"
 
 const Quiz = ({quizItems,category,handleRestart}) => {
   const parentRowRef = useRef();
-  const [counter,setCounter] = useState(8)
+  const [counter,setCounter] = useState(0)
   const [quizItemOptions,setQuizItemOptions] = useState(()=>quizItems[counter].options.map((option,idx)=>({id:idx+1,optionItem:option,isHighlighted:false,isCorrect:null})))
   const [hasSelected,setHasSelected] = useState(false);
   const [answered, setAnswered] = useState(false);

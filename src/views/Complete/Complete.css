@@ -9,6 +9,15 @@
   justify-content: space-between;
   margin: 2rem 0;
   box-shadow: 1px 1px 10px var(--primaryColor);
+  position: relative;
+  overflow: hidden;
+}
+
+.content-glitter-overlay {
+  position: absolute;
+  inset: 0;
+  width: 0;
+  height: 0;
 }
 
 .spin {

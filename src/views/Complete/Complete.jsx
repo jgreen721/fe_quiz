@@ -1,4 +1,5 @@
 import React from 'react'
+import Confetti from "react-confetti"
 import "./Complete.css"
 
 const Complete = ({category,correct,restartGame}) => {
@@ -7,11 +8,17 @@ const Complete = ({category,correct,restartGame}) => {
           <div className="parent-row align-start spin">
       {/* <!-- mb-6 offsets the column height to end at quiz questions bottom --> */}
       <div className="content-column">
+      
         <h2 className="thin">Quiz completed</h2>
         <h2>You scored...</h2>
       </div>
       <div className="content-column">
         <div className="results-card">
+          {correct >= 7 &&
+        <div className="content-glitter-overlay">
+          <Confetti/>
+        </div>
+}
           <div className="category-row flex align-center">
             <img src={category.icon} alt="" />
             <h4>{category.name}</h4>
