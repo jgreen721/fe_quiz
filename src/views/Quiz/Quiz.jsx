@@ -9,7 +9,7 @@ const Quiz = ({quizItems,category,handleRestart}) => {
   const [quizItemOptions,setQuizItemOptions] = useState(()=>quizItems[counter].options.map((option,idx)=>({id:idx+1,optionItem:option,isHighlighted:false,isCorrect:null})))
   const [hasSelected,setHasSelected] = useState(false);
   const [answered, setAnswered] = useState(false);
-  const [correct,setCorrect] = useState(9)
+  const [correct,setCorrect] = useState(0)
   console.log("Quiz",quizItemOptions)
 
 
