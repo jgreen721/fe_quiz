@@ -4,6 +4,10 @@
   gap: 1.5rem;
 }
 
+.fade-in-1 {
+  --delay: 1s;
+}
+
 .theme-picker-input,
 .hover {
   position: relative;
