@@ -44,16 +44,73 @@
 }
 
 .content-column {
-  /* flex: 1; */
   height: 100%;
+}
+
+/* Animations */
+
+.drop-in {
+  opacity: 0;
+  transform: translateY(-10rem);
+  animation: dropin 1s var(--delay) forwards;
+}
+
+@keyframes dropin {
+  50% {
+    opacity: 1;
+    transform: translateY(1.5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
+}
+
+.scale {
+  transform: scale(0);
+  transition: 1s ease;
+  animation: scalegrow 1s var(--delay) forwards;
+}
+
+@keyframes scalegrow {
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fade-in 2s var(--delay) forwards;
+}
+
+@keyframes fade-in {
+  100% {
+    opacity: 1;
+  }
+}
+
+.slide {
+  transform: translateX(-100vw);
+  animation: slidein 1s var(--delay) forwards;
+  opacity: 0;
+  --delay: 0s;
+}
+
+@keyframes slidein {
+  50% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 @media screen and (max-width: 950px) {
   .parent-row {
     grid-template-columns: repeat(1, 1fr);
-  }
-
-  .content-column {
-    width: 100%;
   }
 }

@@ -8,4 +8,19 @@
   align-items: center;
   justify-content: space-between;
   margin: 2rem 0;
+  box-shadow: 1px 1px 10px var(--primaryColor);
+}
+
+.spin {
+  transform: rotateY(720deg) scale(0);
+  animation: spinintro 1s forwards;
+}
+
+@keyframes spinintro {
+  50% {
+    transform: rotateY(0deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
 }

@@ -4,7 +4,7 @@ import "./ThemePicker.css"
 
 const ThemePicker = ({setAppTheme,appTheme}) => {
   return (
-    <div className="theme-picker">
+    <div className="theme-picker fade-in">
         <div className="theme-picker-row">
             <div className="theme-icon-div">
                 <img src={appTheme == "light" ? sunDarkIcon : sunLightIcon} alt="" />

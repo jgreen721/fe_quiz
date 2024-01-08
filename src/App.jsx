@@ -21,17 +21,10 @@ function App() {
 
     let response = await fetch('data.json');
     let data = await response.json();
-    // console.log("Data",data);
-    console.log(data.quizzes,category.name)
-     let questions = data.quizzes.find(d=>d.title == category.name)
+    let questions = data.quizzes.find(d=>d.title == category.name)
       console.log(questions)
      setQuizItems(questions.questions);
-      setCategory(category);
-
-    // console.log(data.quizzes.filter(d=>d.title == category.name))
-
-
-
+     setCategory(category);
   }
 
   const handleRestart = ()=>{

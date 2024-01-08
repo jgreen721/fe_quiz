@@ -4,13 +4,12 @@ import { Complete } from '../index.js'
 import "./Quiz.css"
 
 const Quiz = ({quizItems,category,handleRestart}) => {
-  const counterRef = useRef();
   const parentRowRef = useRef();
-  const [counter,setCounter] = useState(0)
+  const [counter,setCounter] = useState(8)
   const [quizItemOptions,setQuizItemOptions] = useState(()=>quizItems[counter].options.map((option,idx)=>({id:idx+1,optionItem:option,isHighlighted:false,isCorrect:null})))
   const [hasSelected,setHasSelected] = useState(false);
   const [answered, setAnswered] = useState(false);
-  const [correct,setCorrect] = useState(0)
+  const [correct,setCorrect] = useState(9)
   console.log("Quiz",quizItemOptions)
 
 
@@ -49,27 +48,25 @@ const Quiz = ({quizItems,category,handleRestart}) => {
 
 
   const nextQuestion=()=>{
-    // counterRef.current.classList.remove("counter")
-    // counterRef.current.style.opacity = 0;
-    toggleClassAnimations();
     setAnswered(false);
     setHasSelected(false);
-         setCounter((counter)=>counter = counter+1);
-     setQuizItemOptions(()=>quizItems[counter+1].options.map((option,idx)=>({id:idx+1,optionItem:option,isHighlighted:false})))
-    //  setTimeout(()=>counterRef.current.classList.add("counter"),250);
+     if(counter < 9){
+      toggleClassAnimations();
+      setQuizItemOptions(()=>quizItems[counter+1].options.map((option,idx)=>({id:idx+1,optionItem:option,isHighlighted:false})))
+      setTimeout(()=>{setCounter((counter)=>counter = counter+1)},1000)
+     }
+     else setCounter(counter+1)
 
   }
 
   const toggleClassAnimations=()=>{
-    // counterRef.current.classList.remove("counter")
-    // counterRef.current.style.opacity = 0;
-    // setTimeout(()=>counterRef.current.classList.add("counter"),250);
-
+    
     parentRowRef.current.classList.remove("slide")
     parentRowRef.current.style.opacity = 0;
-
     parentRowRef.current.style.transform = `translateX(100vw)`;
-    setTimeout(()=>parentRowRef.current.classList.add("slide"),250);
+    setTimeout(()=>{
+      parentRowRef.current.classList.add("slide")
+    },250);
 
   }
 
@@ -81,13 +78,12 @@ const Quiz = ({quizItems,category,handleRestart}) => {
     handleRestart();
   }
 
-
-  return (quizItems[counter]?.question ? counter < 9 ?  (
+  // if(!quizItems[counter]?.question)return "Loading..."
+  return (counter < 10 ?  (
     <div ref={parentRowRef} className="parent-row align-start slide">
-      {/* <!-- mb-6 offsets the column height to end at quiz questions bottom --> */}
       <div className="quiz-column content-column">
         <div>
-          <h4 className="italic thin mb-3">Question <span ref={counterRef} className="counter">{counter+1}</span> of {quizItems.length}</h4>
+          <h4 className="italic thin mb-3">Question {counter+1} of {quizItems.length}</h4>
          <h3>{quizItems[counter]?.question}</h3> 
          </div>
          <div className="progress-bar-parent">
@@ -104,10 +100,12 @@ const Quiz = ({quizItems,category,handleRestart}) => {
         </ul>
         <button onClick={()=>{
           if(!answered)submitAnswer()
-        else nextQuestion()}} className={hasSelected ?  "btn primary-btn" : "btn primary-btn disabled"}>{answered ? "Next Question" : hasSelected ? "Submit Answer" : "Select Answer"}</button>
+          else nextQuestion()
+        }} 
+        className={hasSelected ?  "btn primary-btn" : "btn primary-btn disabled"}>{counter == 9 && answered ? "Get Score" : answered ? "Next Question" : hasSelected ? "Submit Answer" :  "Select Answer"}</button>
       </div>
     </div>
-  ) : <Complete category={category} restartGame={restartGame} correct={correct}/> : "Loading..."
+  ) : <Complete category={category} restartGame={restartGame} correct={correct}/>
   )
 }
 

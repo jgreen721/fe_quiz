@@ -4,7 +4,7 @@ import "./Complete.css"
 const Complete = ({category,correct,restartGame}) => {
   return (
  
-          <div className="parent-row align-start">
+          <div className="parent-row align-start spin">
       {/* <!-- mb-6 offsets the column height to end at quiz questions bottom --> */}
       <div className="content-column">
         <h2 className="thin">Quiz completed</h2>
@@ -16,7 +16,7 @@ const Complete = ({category,correct,restartGame}) => {
             <img src={category.icon} alt="" />
             <h4>{category.name}</h4>
           </div>
-          <h1>{correct}</h1>
+          <h1 className={correct >= 7 ? "green-text" : "red-text"}>{correct}</h1>
           <h5 className="muted thin">out of 10</h5>
         </div>
         <button onClick={restartGame} className="btn primary-btn">Play Again</button>

@@ -69,12 +69,20 @@ p {
   font-style: italic;
 }
 
-.mt-3 {
-  margin-top: 3rem;
-}
-
 .muted {
   opacity: 65%;
+}
+
+.green-text {
+  color: var(--green);
+}
+
+.red-text {
+  color: var(--red);
+}
+
+.mt-3 {
+  margin-top: 3rem;
 }
 
 .mb-3 {
@@ -128,10 +136,6 @@ p {
   transition: 0.5s ease;
   border: 3px solid green; */
 }
-
-/* .selection-item:hover {
-  transform: scale(1.05, 1.02) translateX(1rem);
-} */
 
 .selection-btn:hover {
   transform: translateX(1rem);
