@@ -34,3 +34,26 @@
   background-image: var(--backgroundImage);
   background-size: cover;
 }
+
+.parent-row {
+  display: flex;
+  gap: 3rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* border: 3px solid red; */
+}
+
+.content-column {
+  /* flex: 1; */
+  height: 100%;
+}
+
+@media screen and (max-width: 950px) {
+  .parent-row {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .content-column {
+    width: 100%;
+  }
+}

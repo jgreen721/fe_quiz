@@ -34,10 +34,15 @@ function App() {
 
   }
 
+  const handleRestart = ()=>{
+    setQuizItems([])
+    setCategory(null);
+  }
+
   return (
     <div data-theme={appTheme} className="app">
       <MenuRow category={category} appTheme={appTheme} setAppTheme={setAppTheme}/>
-      {category ? <Quiz quizItems={quizItems}/> : <TitleScreen selectCategory={selectCategory} categories={categories}/>}
+      {category ? <Quiz handleRestart={handleRestart} quizItems={quizItems} category={category}/> : <TitleScreen selectCategory={selectCategory} categories={categories}/>}
     </div>
   )
 }

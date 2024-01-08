@@ -1,4 +1,4 @@
-.title-parent-row {
+/* .title-parent-row {
   display: flex;
   align-items: center;
   gap: 3rem;
@@ -6,8 +6,7 @@
 
 .title-column {
   flex: 1;
-  /* border: 3px solid green; */
-}
+} */
 
 .title-row {
   display: flex;
@@ -108,13 +107,4 @@
 
 .drop-in-4 {
   --delay: 1s;
-}
-
-@media screen and (max-width: 950px) {
-  .title-parent-row {
-    flex-direction: column;
-  }
-  .title-column {
-    width: 100%;
-  }
 }

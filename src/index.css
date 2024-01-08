@@ -73,6 +73,10 @@ p {
   margin-top: 3rem;
 }
 
+.muted {
+  opacity: 65%;
+}
+
 .mb-3 {
   margin-bottom: 3rem;
 }
@@ -83,7 +87,7 @@ p {
 
 .btn {
   width: 100%;
-  padding: 2.2rem 18rem;
+  padding: 2.2rem;
   font-size: 2.8rem;
   cursor: pointer;
   transition: 0.5s ease;
@@ -142,8 +146,16 @@ p {
 
 .flex {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   gap: 2rem;
+}
+
+.align-start {
+  align-items: flex-start;
+}
+
+.align-center {
+  align-items: center;
 }
 
 @media screen and (max-width: 950px) {
@@ -172,11 +184,25 @@ p {
     font-size: 3rem;
   }
   h3 {
-    font-size: 4.2rem;
+    font-size: 2.6rem;
   }
 
   h4 {
-    font-size: 2.8rem;
+    font-size: 2.2rem;
+  }
+
+  h5 {
+    font-size: 2rem;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 2rem;
+    font-size: 2.2rem;
+    /* cursor: pointer;
+    transition: 0.5s ease;
+    border-radius: 0.8rem;
+    border: none; */
   }
 
   .mb-6 {

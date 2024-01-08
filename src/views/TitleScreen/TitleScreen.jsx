@@ -3,9 +3,9 @@ import "./TitleScreen.css"
 
 const TitleScreen = ({categories,selectCategory}) => {
   return (
-    <div className="view-container title-screen-parent">
-      <div className="title-parent-row">
-      <div className="title-column">
+    // <div className="view-container title-screen-parent">
+      <div className="parent-row align-center">
+      <div className="content-column">
         <div className="title-card">
           <div className="top-title-row title-row">
             <h2 className="drop-in title-h2-one thin">Welcome</h2>
@@ -19,7 +19,7 @@ const TitleScreen = ({categories,selectCategory}) => {
           <h4 className="italic thin mt-3 fade-in">Pick a subject to get started</h4>
         </div>
         </div>
-        <div className="title-column">
+        <div className="content-column">
           <ul className="categories">
             {categories.map((c,idx)=>(
               <li key={c.id} className={`category-item drop-in drop-in-${idx+1}`}>
@@ -35,7 +35,7 @@ const TitleScreen = ({categories,selectCategory}) => {
           <button></button>
         </div>
         </div>
-    </div>
+    // </div>
   )
 }
 

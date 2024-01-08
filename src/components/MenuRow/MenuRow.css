@@ -17,3 +17,10 @@
   align-items: center;
   gap: 3rem;
 }
+
+@media screen and (max-width: 550px) {
+  .menu-row {
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+  }
+}
